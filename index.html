@@ -1,0 +1,151 @@
+<!DOCTYPE html> <html><head>
+        <title>Driving Survey</title>
+    <style>h1{
+    color:blue;
+    }
+    
+
+</style></head>
+    <body>
+    <h1>Are you old enough to drive?</h1>
+    <form id="form">
+        <input id="fName" placeholder="First Name">
+        <br>
+        <br>
+        <input placeholder="Last Name" id="lName">
+        <br>
+        <br>
+        <input placeholder="Age" type="number" max="99" min="13" id="age">
+        <br>
+        <br>
+        <input id="date" name="bday" max="2019-2-01" type="date">
+        <br>
+        <br>
+        <input class="eye" name="eye" value="black" type="radio"> Black<br>
+        <input class="eye2" name="eye" value="blue" type="radio"> Blue<br>
+        <input class="eye3" name="eye" value="brown" type="radio"> Brown
+        <br>
+        <br>
+        <input id="btn" type="button" onclick="myFunction1()" value="Submit">
+        <input id="btn2" type="button" onclick="myFunction2()" value="Reset">
+        <p id="copy1"></p>
+        <p id="copy2"></p>
+        <p id="copy3"></p>
+        <p id="copy4"></p>
+        <p id="copy5"></p>
+        </form>
+        
+        
+        
+        
+    
+
+<script>
+/*__POPCODESTART__*/
+var fName;
+var lName;
+var age;
+var bday;
+var eye;
+
+var ufName = {
+userfName: "",
+checkfName: function(){
+    return this.fName = this.userfName;
+    }
+};
+ufName.userfName=fName;
+ufName.checkfName(fName);
+
+var ulName = {
+userlName: "",
+checklName: function(){
+    return this.lName = this.userlName;
+    }
+};
+ulName.userlName=lName;
+ulName.checklName(lName);
+
+var uAge = {  
+userAge: 0,
+checkAge: function(){
+    return this.uAge = this.userAge;
+
+if (age < 16) {
+          alert("You can't drive.");
+        } else if (age < 18) {
+            alert("You can get your permit.");
+        } else if (age < 25) {
+            alert("You can drive.");
+            
+        }
+            
+    }
+};
+uAge.userAge=age;
+uAge.checkAge(uAge);
+//alert();
+
+var uBday = {  
+userBday: 0
+};
+uBday.userBday=bday;
+
+var eyeOne = {
+eyeOne: ""
+};
+eyeOne.eyeOne=eye;
+
+var eyeTwo = {
+eyeTwo: ""
+};
+eyeTwo.eyeTwo=eye;
+
+var eyeThree = {
+eyeThree: ""
+};
+eyeThree.eyeThree=eye;
+
+
+function myFunction1() {
+    document.getElementById('btn').addEventListener('click', function(){
+    var formInput = document.getElementById("form");
+    var e = formInput.eye.value;
+     document.getElementById('copy5').innerHTML = e;
+ 
+ });
+ 
+ 
+ var a = document.getElementById("fName").value;
+  document.getElementById("copy1").innerHTML = a;
+  
+ var b = document.getElementById("lName").value;
+  document.getElementById("copy2").innerHTML = b;
+  
+ var c = document.getElementById("age").value;
+  document.getElementById("copy3").innerHTML = c;
+ 
+ var d = document.getElementById("date").value;
+  document.getElementById("copy4").innerHTML = d;
+  
+ 
+}
+
+
+
+function myFunction2() {
+    var q = document.getElementById('form').reset(); 
+    
+}
+
+
+
+
+
+
+
+
+
+        
+        
+</script></body></html>
